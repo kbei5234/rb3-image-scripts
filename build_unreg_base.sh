@@ -45,63 +45,17 @@ cd $TARGET
 repo --time init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m $MANIFEST
 repo sync 
 
-# clone qimp sdk layer into workspace
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b $QIM_RELEASE layers/meta-qcom-qim-product-sdk
-
-# download qirp sdk into base build
-#git clone https://git.codelinaro.org/clo/le/meta-ros.git -b ros.qclinux.1.0.r1-rel layers/meta-ros
-#git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
-
-# setup build environment
-#export EXTRALAYERS="meta-qcom-qim-product-sdk"
 MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
 
 start_time=$(date -u +%s)
 
 # build software base image
 bitbake qcom-minimal-image
-#bitbake qcom-console-image
-#bitbake qcom-multimedia-image
-#bitbake qcom-multimedia-test-image
-# build software image
-#bitbake qim-product-sdk
 
 # checking if build is successful
 #echo "checking if build is successful"
 cd $TARGET/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-minimal-image
 ls -al system.img
-
-# download qirp sdk into base build
-#cd $TARGET
-#git clone https://git.codelinaro.org/clo/le/meta-ros.git -b ros.qclinux.1.0.r1-rel layers/meta-ros
-#git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
-
-# setup build environment for qirp
-#ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
-#ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-#MACHINE=qcm6490 DISTRO=qcom-robotics-ros2-humble source setup-robotics-environment
-
-# build qirp image and sdk artifacts
-#../qirp-build qcom-robotics-full-image
-# to see qirp sdk tar file
-#ls -l $TARGET/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/qirpsdk_artifacts
-# to see full image
-#ls -l $TARGET/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcm6490
-
-# clone linux layer 
-#cd $TARGET
-#git clone https://github.com/quic-yocto/meta-qcom-realtime -b $LINUX_RELEASE layers/meta-qcom-realtime
-#export EXTRALAYERS="meta-qcom-realtime"
-
-# setup build environment and build image
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-#bitbake qcom-multimedia-image
 
 end_time=$(date -u +%s)
 echo ====
