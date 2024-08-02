@@ -1,0 +1,45 @@
+[http]
+    sslVerify = false
+        postBuffer = 1048576000
+        maxRequestBuffer = 1048576000
+        lowSpeedLimit = 0
+        lowSpeedTime = 999999
+[safe]
+    directory = *
+[url "https://github.com/"]
+        insteadOf = git://github.com/
+[url "https://github.com/docker/cli"]
+        insteadOf = https://github.com/git/docker/cli
+        insteadOf = git://github.com/docker/cli
+        # below are URLs with 404 errors
+        insteadOf = http://downloads.yoctoproject.org/mirror/sources/git2_github.com.docker.cli.tar.gz
+        insteadOf = http://sources.openembedded.org/git2_github.com.docker.cli.tar.gz
+        insteadOf = https://mirrors.kernel.org/yocto-sources/git2_github.com.docker.cli.tar.gz
+        insteadOf = https://codelinaro.jfrog.io/ui/native/codelinaro-le/
+[url "https://git.codelinaro.org/clo/"]
+        insteadOf = https://source.codeaurora.org/quic/
+        insteadOf = git://source.codeaurora.org/quic/
+        insteadOf = git://codeaurora.org/quic/
+        insteadOf = http://source.codeaurora.org/quic/
+        insteadOf = git://git.codelinaro.org/clo/
+[url "https://git.codelinaro.org/clo/la/platform/external/modp_b64"]
+        insteadOf = git://git.codelinaro.org/clo/la/platform/external/modp_b64
+[url "https://gitlab.com/"]
+        insteadOf = git://gitlab.com/
+[url "https://github.com/urfave/cli"]
+        insteadOf = git://github.com/codegangsta/cli.git
+[url "https://git.netfilter.org/"]
+        insteadOf = git://git.netfilter.org/
+[url "https://github.com/spf13/cobra"]
+        insteadOf = git://github.com/spf13/cobra.git
+[url "https://gitlab.freedesktop.org/virgl/virglrenderer"]
+        insteadOf = git://anongit.freedesktop.org/git/virglrenderer
+[user]
+        email = <your_email>
+        name = <your_name>
+[color]
+        ui = auto
+[http "https://chipmaster2.qti.qualcomm.com"]
+        followRedirects = true
+[http "https://qpm-git.qualcomm.com"]
+        followRedirects = true
