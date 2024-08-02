@@ -5,9 +5,7 @@ NAME=working
 TARGET=${BASEDIR}/${NAME}
 #MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1.xml
 MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml
-QIM_RELEASE=qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3
-LINUX_RELEASE=qcom-6.6.28-QLI.1.1-Ver.1.1_realtime-linux-1.0
-USERNAME=karen.bei@tufts.edu
+USERNAME=<your_username>
 
 # install qsc cli
 sudo apt install curl
@@ -86,38 +84,6 @@ bitbake qim-product-sdk
 
 cd $TARGET/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-multimedia-image
 ls -al system.img
-
-# clone qimp sdk layer 
-#cd $TARGET
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b $QIM_RELEASE layers/meta-qcom-qim-product-sdk
-#export EXTRALAYERS="meta-qcom-qim-product-sdk"
-
-# setup build environment and build image
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-#bitbake qim-product-sdk
-
-# download qirp sdk layers
-#cd $TARGET
-#git clone https://git.codelinaro.org/clo/le/meta-ros.git -b ros.qclinux.1.0.r1-rel layers/meta-ros
-#git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-#git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
-
-# setup build environment
-#ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
-#ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-#MACHINE=qcm6490 DISTRO=qcom-robotics-ros2-humble source setup-robotics-environment
-
-# build robotics image
-#../qirp-build qcom-robotics-full-image
-
-# download linux layers
-#cd $TARGET
-#git clone https://github.com/quic-yocto/meta-qcom-realtime -b $LINUX_RELEASE layers/meta-qcom-realtime
-#export EXTRALAYERS="meta-qcom-realtime"
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-#bitbake qcom-multimedia-image
 
 end_time=$(date -u +%s)
 echo ====
