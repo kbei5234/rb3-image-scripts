@@ -34,6 +34,37 @@
         insteadOf = git://github.com/spf13/cobra.git
 [url "https://gitlab.freedesktop.org/virgl/virglrenderer"]
         insteadOf = git://anongit.freedesktop.org/git/virglrenderer
+[url "https://artifacts.codelinaro.org/ui/native/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/"]
+        insteadOf = https://artifacts.codelinaro.org/artifactory/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/
+[url "https://github.com/ros2-gbp/geometry2-release"]
+        insteadOf = git://github.com/ros2-gbp/geometry2-release
+[url "https://github.com/uncrustify/uncrustify.git"]
+        insteadOf = git://github.com/uncrustify/uncrustify.git
+[url "https://github.com/ros2-gbp/fastrtps-release.git"]
+        insteadOf = git://github.com/ros2-gbp/fastrtps-release
+[url "https://github.com/flann-lib/flann"]
+        insteadOf = https://github.com/mariusmuja/flann
+[url "https://github.com/orocos/orocos_kinematics_dynamics"]
+        insteadOf = git://github.com/orocos/orocos_kinematics_dynamics.git
+[url "https://github.com/ros2-gbp/ament_cmake-release"]
+        insteadOf = git://github.com/ros2-gbp/ament_cmake-release
+[url "https://github.com/ros2-gbp/rosidl-release"]
+        insteadOf = git://github.com/ros2-gbp/rosidl-release
+[url "https://github.com/ros2-gbp/rmw_cyclonedds-release"]
+        insteadOf = git://github.com/ros2-gbp/rmw_cyclonedds-release
+[url "https://github.com/fmtlib/fmt"]
+        insteadOf = git://github.com/fmtlib/fmt
+[url "https://github.com/ros2-gbp/navigation2-release"]
+        insteadOf = git://github.com/SteveMacenski/navigation2-release
+        insteadOf = https://github.com/git/SteveMacenski/navigation2-release/
+#[url "https://artifacts.codelinaro.org/ui/native/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qcrobotics-1-0-r1/apps_proc/prebuilt_HY22/"]
+#       insteadOf = https://artifacts.codelinaro.org/artifactory/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qcrobotics-1-0-r1/apps_proc/prebuilt_HY22/
+#[url "https://artifacts.codelinaro.org/ui/native/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/"]
+#       insteadOf = https://artifacts.codelinaro.org/artifactory/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/adreno_1.0_qcm6490.tar.gz
+#[url "https://artifacts.codelinaro.org/ui/native/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/"]
+ #       insteadOf = https://artifacts.codelinaro.org/artifactory/qli-ci/software/chip/qualcomm_linux-spf-1-0/qualcomm-linux-spf-1-0_test_device_public/r1.0_00039.2/le-qclinux-1-0-r1/apps_proc/prebuilt_HY22/
+[url "https://artifacts.codelinaro.org/ui/native/"]
+        insteadOf = https://artifacts.codelinaro.org/artifactory/
 [user]
         email = <your_email>
         name = <your_name>
