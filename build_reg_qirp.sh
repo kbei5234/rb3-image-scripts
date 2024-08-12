@@ -3,12 +3,8 @@
 BASEDIR=$(realpath $(dirname $0))
 NAME=working
 TARGET=${BASEDIR}/${NAME}
-#MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1.xml
-#MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml
-MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1_realtime-linux-1.0.xml
-QIM_RELEASE=qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3
-LINUX_RELEASE=qcom-6.6.28-QLI.1.1-Ver.1.1_realtime-linux-1.0
-USERNAME=karen.bei@tufts.edu
+MANIFEST=qcom-6.6.28-QLI.1.1-Ver.1.1_robotics-product-sdk-1.1.xml
+USERNAME=<your_username>
 
 # install qsc cli
 sudo apt install curl
@@ -36,7 +32,7 @@ export PATH=~/bin/repo_tool:$PATH
 #qsc-cli login -u $USERNAME
 # Run the following command to generate PAT
 export PAT_TOKEN=$(qsc-cli pat --get)
-echo $PAT_TOKEN
+#echo $PAT_TOKEN
 # add the following entries
 cat >> ~/.netrc << EOL
 #cat >> /home/turbox/workspace/.sdkmanager.config/.netrc << EOL
@@ -73,30 +69,7 @@ cd $TARGET
 repo --time init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m $MANIFEST
 repo sync
 
-# clone qimp sdk layer
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b $QIM_RELEASE layers/meta-qcom-qim-product-sdk
-#export EXTRALAYERS="meta-qcom-qim-product-sdk"
-
-# setup build environment and enter build-qcom-wayland directory
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-
 start_time=$(date -u +%s)
-
-# build images
-#bitbake qcom-multimedia-image
-#bitbake qim-product-sdk
-
-#cd $TARGET/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-multimedia-image
-#ls -al system.img
-
-# clone qimp sdk layer 
-#cd $TARGET
-#git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b $QIM_RELEASE layers/meta-qcom-qim-product-sdk
-#export EXTRALAYERS="meta-qcom-qim-product-sdk"
-
-# setup build environment and build image
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-#bitbake qim-product-sdk
 
 # download qirp sdk layers
 #cd $TARGET
@@ -114,19 +87,8 @@ MACHINE=qcm6490 DISTRO=qcom-robotics-ros2-humble source setup-robotics-environme
 # build robotics image
 ../qirp-build qcom-robotics-full-image
 
-# download linux layers
-#cd $TARGET
-#mkdir $TARGET
-#cd $TARGET
-#repo --time init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m $MANIFEST
-#repo sync
-#git clone https://github.com/quic-yocto/meta-qcom-realtime -b $LINUX_RELEASE layers/meta-qcom-realtime
-#export EXTRALAYERS="meta-qcom-realtime"
-#MACHINE=qcm6490 DISTRO=qcom-wayland source setup-environment
-#bitbake qcom-multimedia-image
-
-#cd $TARGET/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-multimedia-image
-#ls -al system.img
+cd $TARGET/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcm6490/
+#7z a qcom-robotics-full-image.7z qcom-robotics-full-image
 
 end_time=$(date -u +%s)
 echo ====
